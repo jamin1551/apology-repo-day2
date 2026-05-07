@@ -8,18 +8,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #fdf6ec;
-    --warm: #f5e6d0;
-    --amber: #e8c99a;
-    --rust: #c47c3e;
-    --brown: #7a4a2a;
-    --dark: #2c1a0e;
-    --blush: #f0d4c4;
-    --sky: #d4e8f0;
-    --night: #1a1230;
-    --night2: #2d1f4a;
-    --star: #f7e08a;
-    --soft-green: #d4e8d0;
+    --cream: #f7f0e8;
+    --warm: #ede0d4;
+    --amber: #c8a898;
+    --rust: #a07068;
+    --brown: #6a4a40;
+    --dark: #2a1a16;
+    --blush: #f0dcd8;
+    --sky: #b8d4e8;
+    --night: #1a1535;
+    --night2: #26204a;
+    --star: #f0d8b0;
+    --soft-green: #c8dcd0;
+    --seal: #5c3a2a;
+    --siam-cream: #f5ede0;
+    --siam-blue: #7ab8e8;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -90,7 +93,7 @@
   /* ══════════════════════════════════════
      SCENE 0 — PORTADA / NOCHE
   ══════════════════════════════════════ */
-  #s0 { background: linear-gradient(180deg, #0d0820 0%, #1a1230 50%, #2d1f4a 100%); }
+  #s0 { background: linear-gradient(180deg, #0e0c1e 0%, #1a1535 50%, #26204a 100%); }
 
   .stars {
     position: absolute;
@@ -143,12 +146,26 @@
     animation-delay: 0.7s;
   }
   .cover-cat {
-    font-size: clamp(3rem, 10vw, 5rem);
     margin-top: 20px;
     animation: floatCat 3s ease-in-out infinite, fadeUp 1.2s ease both;
     animation-delay: 0s, 1s;
     position: relative;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+  }
+  .scene-cat {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .cat-svg {
+    width: clamp(70px, 18vw, 100px);
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(92,58,42,0.3));
+  }
+  .mirror-reflection .cat-svg {
+    width: 54px;
   }
   @keyframes floatCat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
   @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
@@ -156,7 +173,7 @@
   /* ══════════════════════════════════════
      SCENE 1 — DESPERTAR
   ══════════════════════════════════════ */
-  #s1 { background: linear-gradient(180deg, #1a0f2e 0%, #3d2060 40%, #7a3a8a 70%, #c47c5a 100%); }
+  #s1 { background: linear-gradient(180deg, #1a1535 0%, #3a2860 40%, #886090 70%, #c4a08a 100%); }
 
   .horizon {
     position: absolute;
@@ -211,7 +228,7 @@
   /* ══════════════════════════════════════
      SCENE 2 — EL RECUERDO (FLASHBACK)
   ══════════════════════════════════════ */
-  #s2 { background: #1c1c2e; }
+  #s2 { background: linear-gradient(135deg, #16182e 0%, #20243c 100%); }
 
   .memory-bubble {
     position: relative;
@@ -252,7 +269,7 @@
   /* ══════════════════════════════════════
      SCENE 3 — EL RECONOCIMIENTO
   ══════════════════════════════════════ */
-  #s3 { background: linear-gradient(135deg, #1a0f0a 0%, #3a1f10 100%); }
+  #s3 { background: linear-gradient(135deg, #1e1614 0%, #362a20 100%); }
 
   .mirror-scene {
     position: relative;
@@ -318,7 +335,7 @@
   /* ══════════════════════════════════════
      SCENE 4 — LA PROMESA (INTERACTIVE)
   ══════════════════════════════════════ */
-  #s4 { background: linear-gradient(180deg, #0f1a0f 0%, #1a2d1a 50%, #0d1a0d 100%); }
+  #s4 { background: linear-gradient(180deg, #141e1e 0%, #1e2e2a 50%, #141e1e 100%); }
 
   .promise-scroll {
     width: min(340px, 88vw);
@@ -418,7 +435,7 @@
   /* ══════════════════════════════════════
      SCENE 5 — EL REGALO
   ══════════════════════════════════════ */
-  #s5 { background: linear-gradient(180deg, #1a0f2e 0%, #2d1f4a 40%, #4a2060 70%, #7a3050 100%); }
+  #s5 { background: linear-gradient(180deg, #1a1535 0%, #2a2048 40%, #40305a 70%, #6a4858 100%); }
 
   .gift-scene {
     width: min(320px, 88vw);
@@ -492,7 +509,7 @@
   /* ══════════════════════════════════════
      SCENE 6 — FINAL
   ══════════════════════════════════════ */
-  #s6 { background: linear-gradient(180deg, #0d0820 0%, #1a1230 50%, #2d1f4a 100%); }
+  #s6 { background: linear-gradient(180deg, #0e0c1e 0%, #1a1535 50%, #26204a 100%); }
 
   .final-wrap {
     text-align: center;
@@ -566,7 +583,28 @@
     <div class="cover-day">Día 2.</div>
     <div class="cover-sub">sobre reconocer un error y no repetirlo</div>
   </div>
-  <div class="cover-cat">🐱</div>
+  <div class="cover-cat">
+    <svg class="cat-svg" viewBox="0 0 90 88" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="14,46 27,16 41,43" fill="#5c3a2a"/>
+      <polygon points="76,46 63,16 49,43" fill="#5c3a2a"/>
+      <polygon points="20,43 28,21 38,41" fill="#e8c0b4"/>
+      <polygon points="70,43 62,21 52,41" fill="#e8c0b4"/>
+      <ellipse cx="45" cy="56" rx="31" ry="29" fill="#f5ede0"/>
+      <ellipse cx="45" cy="54" rx="19" ry="15" fill="#5c3a2a" opacity="0.22"/>
+      <ellipse cx="34" cy="51" rx="7" ry="5" fill="#7ab8e8"/>
+      <ellipse cx="34" cy="51" rx="3" ry="4.2" fill="#1c2a3a"/>
+      <circle cx="35.5" cy="49.5" r="1.1" fill="white"/>
+      <ellipse cx="56" cy="51" rx="7" ry="5" fill="#7ab8e8"/>
+      <ellipse cx="56" cy="51" rx="3" ry="4.2" fill="#1c2a3a"/>
+      <circle cx="57.5" cy="49.5" r="1.1" fill="white"/>
+      <ellipse cx="45" cy="61" rx="3.5" ry="2.5" fill="#c4848a"/>
+      <path d="M42,64 Q45,67 48,64" fill="none" stroke="#8b6050" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="13" y1="59" x2="36" y2="62" stroke="#c0b0a0" stroke-width="0.9"/>
+      <line x1="13" y1="64" x2="36" y2="64" stroke="#c0b0a0" stroke-width="0.9"/>
+      <line x1="54" y1="62" x2="77" y2="59" stroke="#c0b0a0" stroke-width="0.9"/>
+      <line x1="54" y1="64" x2="77" y2="64" stroke="#c0b0a0" stroke-width="0.9"/>
+    </svg>
+  </div>
 </div>
 
 <!-- ══ SCENE 1: DESPERTAR ══ -->
@@ -574,7 +612,28 @@
   <div class="sun-rising"></div>
   <div class="horizon"></div>
   <div class="window-frame">
-    <span class="scene-cat">🐈</span>
+    <div class="scene-cat">
+      <svg class="cat-svg" viewBox="0 0 90 88" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="14,46 27,16 41,43" fill="#5c3a2a"/>
+        <polygon points="76,46 63,16 49,43" fill="#5c3a2a"/>
+        <polygon points="20,43 28,21 38,41" fill="#e8c0b4"/>
+        <polygon points="70,43 62,21 52,41" fill="#e8c0b4"/>
+        <ellipse cx="45" cy="56" rx="31" ry="29" fill="#f5ede0"/>
+        <ellipse cx="45" cy="54" rx="19" ry="15" fill="#5c3a2a" opacity="0.22"/>
+        <ellipse cx="34" cy="51" rx="7" ry="5" fill="#7ab8e8"/>
+        <ellipse cx="34" cy="51" rx="3" ry="4.2" fill="#1c2a3a"/>
+        <circle cx="35.5" cy="49.5" r="1.1" fill="white"/>
+        <ellipse cx="56" cy="51" rx="7" ry="5" fill="#7ab8e8"/>
+        <ellipse cx="56" cy="51" rx="3" ry="4.2" fill="#1c2a3a"/>
+        <circle cx="57.5" cy="49.5" r="1.1" fill="white"/>
+        <ellipse cx="45" cy="61" rx="3.5" ry="2.5" fill="#c4848a"/>
+        <path d="M42,64 Q45,67 48,64" fill="none" stroke="#8b6050" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="13" y1="59" x2="36" y2="62" stroke="#c0b0a0" stroke-width="0.9"/>
+        <line x1="13" y1="64" x2="36" y2="64" stroke="#c0b0a0" stroke-width="0.9"/>
+        <line x1="54" y1="62" x2="77" y2="59" stroke="#c0b0a0" stroke-width="0.9"/>
+        <line x1="54" y1="64" x2="77" y2="64" stroke="#c0b0a0" stroke-width="0.9"/>
+      </svg>
+    </div>
     <div class="scene-text">
       Amaneció el día 2.<br><br>
       Lo primero en lo que pensé<br>
@@ -602,7 +661,24 @@
 <div class="scene" id="s3">
   <div class="mirror-scene">
     <div class="mirror-frame">
-      <div class="mirror-reflection">🐱</div>
+      <div class="mirror-reflection">
+        <svg class="cat-svg" style="width:54px" viewBox="0 0 90 88" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="14,46 27,16 41,43" fill="#5c3a2a"/>
+          <polygon points="76,46 63,16 49,43" fill="#5c3a2a"/>
+          <polygon points="20,43 28,21 38,41" fill="#e8c0b4"/>
+          <polygon points="70,43 62,21 52,41" fill="#e8c0b4"/>
+          <ellipse cx="45" cy="56" rx="31" ry="29" fill="#f5ede0"/>
+          <ellipse cx="45" cy="54" rx="19" ry="15" fill="#5c3a2a" opacity="0.22"/>
+          <ellipse cx="34" cy="51" rx="7" ry="5" fill="#7ab8e8"/>
+          <ellipse cx="34" cy="51" rx="3" ry="4.2" fill="#1c2a3a"/>
+          <circle cx="35.5" cy="49.5" r="1.1" fill="white"/>
+          <ellipse cx="56" cy="51" rx="7" ry="5" fill="#7ab8e8"/>
+          <ellipse cx="56" cy="51" rx="3" ry="4.2" fill="#1c2a3a"/>
+          <circle cx="57.5" cy="49.5" r="1.1" fill="white"/>
+          <ellipse cx="45" cy="61" rx="3.5" ry="2.5" fill="#c4848a"/>
+          <path d="M42,64 Q45,67 48,64" fill="none" stroke="#8b6050" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
     </div>
     <div class="recognition-text">
       Viví ese momento y lo vi mal.<br>
@@ -771,27 +847,24 @@
     } catch(e) {}
   }
 
-  // Ronroneo suave (escenas de gato)
+  // Ronroneo suave (escenas de gato) — dos senos ligeramente desafinados
   function soundPurr() {
     try {
-      const ctx  = getCtx();
-      const osc  = ctx.createOscillator();
-      const lfo  = ctx.createOscillator();
-      const lfoG = ctx.createGain();
-      const gain = ctx.createGain();
-      lfo.connect(lfoG); lfoG.connect(osc.frequency);
-      osc.connect(gain); gain.connect(ctx.destination);
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(55, ctx.currentTime);
-      lfo.type = 'sine';
-      lfo.frequency.setValueAtTime(25, ctx.currentTime);
-      lfoG.gain.setValueAtTime(8, ctx.currentTime);
-      gain.gain.setValueAtTime(0, ctx.currentTime);
-      gain.gain.linearRampToValueAtTime(0.07, ctx.currentTime + 0.1);
-      gain.gain.setValueAtTime(0.07, ctx.currentTime + 0.55);
-      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.75);
-      osc.start(ctx.currentTime); lfo.start(ctx.currentTime);
-      osc.stop(ctx.currentTime + 0.8); lfo.stop(ctx.currentTime + 0.8);
+      const ctx = getCtx();
+      [54, 57].forEach((freq) => {
+        const osc  = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain.gain.setValueAtTime(0, ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.055, ctx.currentTime + 0.15);
+        gain.gain.setValueAtTime(0.055, ctx.currentTime + 0.5);
+        gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.8);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.85);
+      });
     } catch(e) {}
   }
 
